@@ -1,23 +1,59 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import { useUserStore } from "../stores/user";
+
+import DashboardView from "../views/dashboard/DashboardView.vue";
+import LoginView from "../views/dashboard/LoginView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: HomeView
+      path: "/dashboard",
+      name: "",
+      component: DashboardView,
+      children: [
+        {
+          path: "",
+          name: "Dashboard", // Move the name here
+          component: LoginView,
+        },
+        { path: "servers", component: LoginView },
+        { path: "players", component: LoginView },
+        { path: "player/:uid", component: LoginView },
+        { path: "mailbox", component: LoginView },
+        { path: "redeem", component: LoginView },
+        { path: "*", redirect: "/" },
+      ],
+      meta: {
+        requiresAuth: true,
+      },
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    }
-  ]
-})
+      path: "/login",
+      name: "Login",
+      component: LoginView,
+      meta: {
+        requiresAuth: false,
+      },
+    },
+  ],
+});
 
-export default router
+router.beforeEach(async (to, from, next) => {
+  const userStore = useUserStore();
+  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
+
+  if (!userStore.user) {
+    await userStore.fetchCurrentUser();
+  }
+
+  if (requiresAuth && !userStore.user) {
+    next({ name: "Login" });
+  } else if (to.name === "Login" && userStore.user) {
+    next({ name: "Dashboard" });
+  } else {
+    next();
+  }
+});
+
+export default router;
