@@ -185,9 +185,9 @@ const ToggleTrailer = () => {
           <div class="md:flex items-center justify-center hidden mr0 md:mr-3">
             <div class="w-fit">
               <img
-                src="../../image/socials/qrcode_global.jpg"
+                src="../../image/socials/qrcode.png"
                 alt=""
-                class="store-qr--button"
+                class="store-qr--button opacity-95"
               />
             </div>
           </div>
