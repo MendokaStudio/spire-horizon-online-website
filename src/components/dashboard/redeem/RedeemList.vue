@@ -186,8 +186,11 @@ const handleDeleteRedeemCode = async (code) => {
           <td class="px-6 py-4">{{ code.ItemID }}</td>
           <td class="px-6 py-4">{{ code.Quantity }}</td>
           <td class="px-6 py-4">
-            <div v-for="(data, key) in code.ItemData" :key="key">
-              {{ key }}: {{ data }}
+            <div v-if="!Object.keys(code.ItemData)[0]">-</div>
+            <div v-if="Object.keys(code.ItemData)[0]">
+              <div v-for="(data, key) in code.ItemData" :key="key">
+                {{ key }}: {{ data }}
+              </div>
             </div>
           </td>
           <td class="px-6 py-4">

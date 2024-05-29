@@ -35,7 +35,6 @@ export const useServerStore = defineStore("server", {
           { withCredentials: true }
         );
       const data = await this.handleRequest(requestFn);
-      this.servers = data; // Update state as needed
       return data;
     },
 

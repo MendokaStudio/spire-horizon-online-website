@@ -7,12 +7,11 @@ import {
 } from "../../../script/utilityFunction.js";
 
 import { useMailboxStore } from "../../../stores/mailbox.js";
-
 import { ref, onMounted } from "vue";
-
-
-
 import { initFlowbite } from "flowbite";
+
+import LoadingIcon from "@/components/utility/LoadingIcon.vue";
+import StatusHandling from "@/components/utility/StatusHandling.vue";
 
 // initialize components based on data attribute selectors
 onMounted(() => {

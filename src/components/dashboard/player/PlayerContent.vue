@@ -10,7 +10,7 @@ const playerNameSearchQuery = ref("");
 const emailSearchQuery = ref("");
 
 onMounted(async () => {
-  await playerStore.getAllPlayers(3);
+  await playerStore.getAllPlayers(100);
   initFlowbite();
 });
 

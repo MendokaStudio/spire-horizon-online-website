@@ -420,7 +420,7 @@ const handleChangeServerAccess = async (serverID, status) => {
 
     <!-- Server List -->
     <div
-      v-if="true"
+      v-if="serverStore.servers"
       class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-5"
     >
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 mb-4">
