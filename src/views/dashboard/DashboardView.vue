@@ -12,7 +12,7 @@ onMounted(() => {
 
 const handleSignout = async () => {
   await userStore.logout();
-  router.push("/");
+  router.push({ name: "Login" });
 };
 </script>
 

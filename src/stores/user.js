@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = import.meta.env.VITE_APP_API_BASE_URL;
 
 export const useUserStore = defineStore("user", {
   state: () => ({
@@ -13,7 +13,7 @@ export const useUserStore = defineStore("user", {
     async fetchCurrentUser() {
       this.isLoading = true;
       try {
-        const response = await axios.get(`${API_BASE_URL}/get-user`, {
+        const response = await axios.get(`${API_BASE_URL}/api/user/get`, {
           withCredentials: true,
         });
         this.user = response.data.user;
@@ -29,7 +29,7 @@ export const useUserStore = defineStore("user", {
       this.error = null;
       try {
         const response = await axios.post(
-          `${API_BASE_URL}/login`,
+          `${API_BASE_URL}/api/user/login`,
           {
             email,
             password,
@@ -37,8 +37,9 @@ export const useUserStore = defineStore("user", {
           { withCredentials: true }
         );
 
-        this.user = response.data;
-        localStorage.setItem("accessToken", response.data.accessToken); // เก็บ accessToken
+        const userCredential = response.data.userCredential;
+        this.user = userCredential.user
+        localStorage.setItem("accessToken", userCredential._tokenResponse.idToken); // เก็บ idToken เป็น accessToken
         this.isLoading = false;
       } catch (error) {
         this.error = error.response.data.error || "Login failed";
@@ -49,7 +50,7 @@ export const useUserStore = defineStore("user", {
       this.isLoading = true;
       try {
         await axios.post(
-          `${API_BASE_URL}/logout`,
+          `${API_BASE_URL}/api/user/logout`,
           {},
           { withCredentials: true }
         );
