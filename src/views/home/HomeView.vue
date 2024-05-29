@@ -1,13 +1,57 @@
-<template>
-    <div>
-
-    </div>
-</template>
-
 <script setup>
+import { ref, onMounted } from "vue";
+import { useUtilityStore } from "../../stores/utilityStore";
 
+const utilityStore = useUtilityStore();
+
+const videoOpacity = ref(100);
+const isCompleteOpening = ref(true);
+
+onMounted(() => {
+  // setTimeout(() => {
+  //   const opacityInterval = setInterval(() => {
+  //     if (videoOpacity.value > 0) {
+  //       videoOpacity.value -= 0.5;
+  //     } else {
+  //       clearInterval(opacityInterval);
+  //       isCompleteOpening.value = true;
+  //     }
+  //   }, 5);
+  // }, 3000);
+});
 </script>
 
-<style lang="scss" scoped>
+<template>
+  <div class="relative h-screen overflow-hidden">
+    <!-- Openning Video -->
+    <video
+      v-if="!isCompleteOpening"
+      class="absolute top-0 left-0 w-full h-full object-cover z-50"
+      :style="{ opacity: videoOpacity / 100 }"
+      autoplay
+      muted
+    >
+      <source src="../../videos/Intro.mp4" type="video/mp4" />
+    </video>
+    <!-- Background Video -->
+    <video
+      class="absolute top-0 left-0 w-full h-full object-cover object-[-280px] xl:object-center"
+      autoplay
+      muted
+      loop
+    >
+      <source src="../../videos/video-menu.mp4" type="video/mp4" />
+    </video>
 
-</style>
+    <!-- Main Content -->
+    <div
+      class="relative z-10 flex items-center justify-center h-full text-white"
+    >
+      <router-view
+        :style="{
+          opacity: utilityStore.contentOpacity,
+        }"
+      />
+    </div>
+  </div>
+</template>

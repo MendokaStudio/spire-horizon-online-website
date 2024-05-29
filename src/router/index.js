@@ -1,9 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { useUserStore } from "../stores/user";
-import { AdminChecker } from "../script/utilityFunction";
+import { AdminChecker, IpChecker } from "../script/utilityFunction";
+import { useIpAddressStore } from "../stores/ip-address";
 
+// Admin Route
 const LoginView = () => import("../views/dashboard/LoginView.vue");
 const DashboardView = () => import("../views/dashboard/DashboardView.vue");
+const DashboardContent = () =>
+  import("../components/dashboard/home/DashboardContent.vue");
 const ServersContent = () =>
   import("../components/dashboard/server/ServersContent.vue");
 const PlayerContent = () =>
@@ -12,38 +16,85 @@ const PlayerInfoContent = () =>
   import("../components/dashboard/player/PlayerInfoContent.vue");
 const MailboxContent = () =>
   import("../components/dashboard/mailbox/MailboxContent.vue");
-  const RedeemContent = () =>
+const RedeemContent = () =>
   import("../components/dashboard/redeem/RedeemContent.vue");
 
-
+// User Route
 const HomeView = () => import("../views/home/HomeView.vue");
+const HomeContent = () => import("../components/home/HomeContent.vue");
+const NewsContent = () => import("../components/home/NewsContent.vue");
+const ClassesContent = () => import("../components/home/ClassesContent.vue");
+const CardsContent = () => import("../components/home/CardsContent.vue");
+const RankingContent = () => import("../components/home/RankingContent.vue");
 
 const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: HomeView,
-    meta: { requiresAuth: false, requiresAdminAuth: false },
-  },
   {
     path: "/dashboard",
     name: "",
     component: DashboardView,
     children: [
-      { path: "", name: "Dashboard", component: LoginView },
+      { path: "", name: "Dashboard", component: DashboardContent },
       { path: "servers", component: ServersContent },
       { path: "players", component: PlayerContent },
       { path: "player/:uid", component: PlayerInfoContent },
       { path: "mailbox", component: MailboxContent },
       { path: "redeem", component: RedeemContent },
     ],
-    meta: { requiresAuth: true, requiresAdminAuth: true },
+    meta: {
+      requiresAuth: true,
+      requiresAdminAuth: true,
+      showNavBar: false,
+      isProtected: true,
+    },
   },
   {
     path: "/login",
     name: "Login",
     component: LoginView,
-    meta: { requiresAuth: false, requiresAdminAuth: false },
+    meta: {
+      requiresAuth: false,
+      requiresAdminAuth: false,
+      showNavBar: false,
+      isProtected: true,
+    },
+  },
+  {
+    path: "/",
+    name: "",
+    component: HomeView,
+    children: [
+      {
+        path: "",
+        component: HomeContent,
+        name: "Home",
+      },
+      {
+        path: "news",
+        component: NewsContent,
+        name: "News",
+      },
+      {
+        path: "classes",
+        component: ClassesContent,
+        name: "Classes",
+      },
+      {
+        path: "cards",
+        component: CardsContent,
+        name: "Cards",
+      },
+      {
+        path: "ranking",
+        component: RankingContent,
+        name: "Ranking",
+      },
+    ],
+    meta: {
+      requiresAuth: false,
+      requiresAdminAuth: false,
+      showNavBar: true,
+      isProtected: false,
+    },
   },
   {
     path: "/:pathMatch(.*)*", // Catch-all route for 404
@@ -58,10 +109,30 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
   const userStore = useUserStore();
+  const ipAddressStore = useIpAddressStore();
+
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
+  const isProtected = to.matched.some((record) => record.meta.isProtected);
   const requiresAdminAuth = to.matched.some(
     (record) => record.meta.requiresAdminAuth
   );
+
+  if (!requiresAuth && !requiresAdminAuth && !isProtected) {
+    return next();
+  }
+
+  if (isProtected) {
+    if (!ipAddressStore.myIP) {
+      await ipAddressStore.getMyIp();
+      if (!IpChecker(ipAddressStore.myIP)) {
+        return next({ path: "/" });
+      }
+    } else {
+      if (!IpChecker(ipAddressStore.myIP)) {
+        return next({ path: "/" });
+      }
+    }
+  }
 
   if (!userStore.user) {
     await userStore.fetchCurrentUser();

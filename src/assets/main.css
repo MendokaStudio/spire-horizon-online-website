@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navbar-button {
+  @apply text-gray-300 hover:text-white lg:px-[1px] 2xl:px-2 lg:text-lg xl:text-[22px] hover:cursor-pointer hover:scale-125 duration-500;
+}
+
+.navbar-vertical-right {
+  @apply px-1.5 border-r-2 h-12 border-gray-300 border-opacity-30;
+}
+
+.navbar-vertical-left {
+  @apply px-1.5 border-l-2 h-12 border-gray-300 border-opacity-0;
+}
+
+.social-icon {
+  @apply px-1  rounded hover:scale-125 duration-300 w-10 md:w-12 hover:cursor-pointer;
+}
+
+.store-button {
+  @apply 2xl:w-60 xl:w-48 md:w-48 w-36;
+}
+
+.store-qr--button {
+  @apply 2xl:w-36 xl:w-32 md:w-32 w-32;
+}
+
+.mobile-navbar-vertical-right {
+  @apply px-1 border-r-2 h-8 border-gray-300 border-opacity-30;
+}
+
+.mobile-navbar-vertical-left {
+  @apply px-1 border-l-2 h-8 border-gray-300 border-opacity-0;
+}
+
+.mobile-navbar-button {
+  @apply text-gray-300 hover:text-white text-sm hover:cursor-pointer hover:scale-125 duration-500;
+}
+.test {
+  @apply lg:max-h-[300%];
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}

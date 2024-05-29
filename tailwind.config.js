@@ -8,7 +8,11 @@ export default {
     "./node_modules/flowbite/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "modal-bg": "url('../../image/elements/modal_background.png')",
+      },
+    },
     fontFamily: {
       "marko-one": ["marko-one-regular", "Marko One", "serif"],
     },

@@ -70,3 +70,11 @@ export const AdminChecker = (uid) => {
     uid === import.meta.env.VITE_APP_ADMIN_UID_03
   );
 };
+
+export const IpChecker = (ip) => {
+  return (
+    ip === import.meta.env.VITE_APP_ADMIN_IP_01 ||
+    ip === import.meta.env.VITE_APP_ADMIN_IP_02 ||
+    ip === import.meta.env.VITE_APP_ADMIN_IP_03
+  );
+};
