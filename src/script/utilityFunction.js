@@ -63,6 +63,15 @@ export const downloadJson = async (fileUrl, fileName) => {
   }
 };
 
+export const TimestampNow = () => {
+  const timestampInMilliseconds = Date.now();
+
+  // Convert milliseconds to seconds
+  const timestampInSeconds = Math.floor(timestampInMilliseconds / 1000);
+
+  return timestampInSeconds;
+};
+
 export const AdminChecker = (uid) => {
   return (
     uid === import.meta.env.VITE_APP_ADMIN_UID_01 ||
