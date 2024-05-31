@@ -53,7 +53,7 @@ const RefreshPlayerInventory = async () => {
 
 const formatTimestamp = (timestamp) => {
   const date = new Date(
-    timestamp.seconds * 1000 + timestamp.nanoseconds / 1000000
+    timestamp._seconds * 1000 + timestamp._nanoseconds / 1000000
   );
   const dateString = date?.toLocaleDateString("en-US", {
     year: "numeric",

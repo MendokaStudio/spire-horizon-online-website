@@ -8,7 +8,7 @@ const utilityStore = useUtilityStore();
 
 <template>
   <!-- Mobile Navbar -->
-  <nav class="fixed lg:hidden w-full z-20 bottom-0 mb-12 md:mb-16">
+  <nav class="fixed lg:hidden w-full z-20 bottom-0 mb-16 md:mb-16">
     <div class="w-full flex justify-center items-center">
       <!-- Image -->
       <div class="absolute z-0 px-5 max-w-[500px]">

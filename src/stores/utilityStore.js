@@ -6,6 +6,7 @@ export const useUtilityStore = defineStore("utilityStore", {
     intervalState: 1,
     isAvailableState: true,
     contentOpacityState: 100,
+    isShowCopyright: false,
   }),
   getters: {
     contentOpacity: (state) => state.contentOpacityState / 100,
@@ -22,6 +23,12 @@ export const useUtilityStore = defineStore("utilityStore", {
             this.isAvailableState = true;
             this.ContentReveal();
             router.push({ name: pathName });
+            if (pathName == "Home") {
+              console.log("set show");
+              this.isShowCopyright = true;
+            } else {
+              this.isShowCopyright = false;
+            }
           }
         }, this.intervalState);
       }

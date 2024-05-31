@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useUtilityStore } from "../../stores/utilityStore";
+import { initFlowbite } from "flowbite";
+import FooterContent from "@/components/home/FooterContent.vue";
 
 const utilityStore = useUtilityStore();
 
@@ -8,22 +10,23 @@ const videoOpacity = ref(100);
 const isCompleteOpening = ref(true);
 
 onMounted(() => {
-  // setTimeout(() => {
-  //   const opacityInterval = setInterval(() => {
-  //     if (videoOpacity.value > 0) {
-  //       videoOpacity.value -= 0.5;
-  //     } else {
-  //       clearInterval(opacityInterval);
-  //       isCompleteOpening.value = true;
-  //     }
-  //   }, 5);
-  // }, 3000);
+  initFlowbite();
+  setTimeout(() => {
+    const opacityInterval = setInterval(() => {
+      if (videoOpacity.value > 0) {
+        videoOpacity.value -= 0.5;
+      } else {
+        clearInterval(opacityInterval);
+        isCompleteOpening.value = true;
+      }
+    }, 5);
+  }, 3000);
 });
 </script>
 
 <template>
   <div class="relative h-screen overflow-hidden">
-    <!-- Openning Video -->
+    <!-- Opening Video -->
     <video
       v-if="!isCompleteOpening"
       class="absolute top-0 left-0 w-full h-full object-cover z-50"
@@ -45,9 +48,15 @@ onMounted(() => {
 
     <!-- Main Content -->
     <div
-      class="relative z-10 flex items-center justify-center h-full text-white"
+      class="relative z-10 flex flex-col items-center justify-center h-full text-white"
     >
       <router-view
+        :style="{
+          opacity: utilityStore.contentOpacity,
+        }"
+      />
+      <FooterContent
+        v-if="utilityStore.isShowCopyright"
         :style="{
           opacity: utilityStore.contentOpacity,
         }"

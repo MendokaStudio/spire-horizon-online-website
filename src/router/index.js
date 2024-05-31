@@ -26,6 +26,12 @@ const NewsContent = () => import("../components/home/NewsContent.vue");
 const ClassesContent = () => import("../components/home/ClassesContent.vue");
 const CardsContent = () => import("../components/home/CardsContent.vue");
 const RankingContent = () => import("../components/home/RankingContent.vue");
+const CopyrightContent = () =>
+  import("../components/home/CopyrightContent.vue");
+const PrivacyPolicyContent = () =>
+  import("../components/home/PrivacyPolicyContent.vue");
+const TermsOfService = () => import("../components/home/TermsOfService.vue");
+const EulaContent = () => import("../components/home/EulaContent.vue");
 
 const routes = [
   {
@@ -45,6 +51,50 @@ const routes = [
       requiresAdminAuth: true,
       showNavBar: false,
       isProtected: true,
+    },
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: LoginView,
+    meta: {
+      requiresAuth: false,
+      requiresAdminAuth: false,
+      showNavBar: false,
+      isProtected: true,
+    },
+  },
+  {
+    path: "/privacy_policy",
+    name: "PrivacyPolicy",
+    component: PrivacyPolicyContent,
+    meta: {
+      requiresAuth: false,
+      requiresAdminAuth: false,
+      showNavBar: false,
+      isProtected: false,
+    },
+  },
+  {
+    path: "/terms_of_service",
+    name: "TermsOfService",
+    component: TermsOfService,
+    meta: {
+      requiresAuth: false,
+      requiresAdminAuth: false,
+      showNavBar: false,
+      isProtected: false,
+    },
+  },
+  {
+    path: "/eula",
+    name: "EULA",
+    component: EulaContent,
+    meta: {
+      requiresAuth: false,
+      requiresAdminAuth: false,
+      showNavBar: false,
+      isProtected: false,
     },
   },
   {
@@ -87,6 +137,11 @@ const routes = [
         path: "ranking",
         component: RankingContent,
         name: "Ranking",
+      },
+      {
+        path: "copyright",
+        component: CopyrightContent,
+        name: "Copyright",
       },
     ],
     meta: {

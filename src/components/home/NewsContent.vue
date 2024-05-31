@@ -2,15 +2,22 @@
 import { ref, onMounted } from "vue";
 import { useUtilityStore } from "../../stores/utilityStore";
 import { useSteamKeyStore } from "../../stores/steamkey";
+import { useRouter } from "vue-router";
 
 const utilityStore = useUtilityStore();
 const steamKeyStore = useSteamKeyStore();
+const router = useRouter();
 
 const email = ref("");
 
 const handleGetSteamKey = async () => {
   await steamKeyStore.getSteamkey(email.value);
   email.value = "";
+};
+
+const openInNewTab = (path) => {
+  const routeData = router.resolve({ path: path });
+  window.open(routeData.href, "_blank");
 };
 
 onMounted(async () => {
@@ -87,11 +94,15 @@ onMounted(async () => {
             </button>
             <div class="text-xs max-w-72 text-center pt-2">
               Please read and agree to the
-              <a href="#" target="_blank" class="text-yellow-300"
+              <a
+                @click="openInNewTab('/privacy_policy')"
+                class="text-yellow-300 hover:cursor-pointer"
                 >Privacy Policy</a
               >
               and
-              <a href="#" target="_blank" class="text-yellow-300"
+              <a
+                @click="openInNewTab('/terms_of_service')"
+                class="text-yellow-300 hover:cursor-pointer"
                 >Terms of Service</a
               >
               before subscribe.
