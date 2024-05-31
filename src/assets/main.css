@@ -65,3 +65,7 @@
 .law-list-text {
   @apply w-fit pb-1;
 }
+
+.law-table-border {
+  @apply border-2 border-gray-800;
+}

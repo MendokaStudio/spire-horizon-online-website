@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col space-y-10 m-20">
-    <div class="law-text-header">Terms of Service</div>
+    <div class="law-text-header">TERMS OF SERVICE</div>
     <div class="law-text-paragraph">Effective Date: May 31, 2024</div>
     <div class="law-text-header">AGREEMENT TO OUR LEGAL TERMS</div>
     <div class="law-text-paragraph">
