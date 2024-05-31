@@ -93,7 +93,7 @@ const findRemainExpireDay = (timestamp, expireIn) => {
 };
 
 const formatExpireDate = (timestamp, expireIn) => {
-  const date = new Date((timestamp.seconds + expireIn * 86400) * 1000);
+  const date = new Date((timestamp._seconds + expireIn * 86400) * 1000);
 
   const hour = date.getHours();
   const minute = date.getMinutes();

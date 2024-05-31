@@ -23,7 +23,7 @@ const handleSignout = async () => {
   >
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
       <div class="flex items-center justify-between">
-        <div class="flex items-center justify-start rtl:justify-end">
+        <a class="flex items-center justify-start rtl:justify-end hover:cursor-auto" href="/">
           <button
             data-drawer-target="logo-sidebar"
             data-drawer-toggle="logo-sidebar"
@@ -57,7 +57,7 @@ const handleSignout = async () => {
               >Spire Horizon</span
             >
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </nav>
