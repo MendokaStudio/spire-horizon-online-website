@@ -5,7 +5,8 @@
     <div class="law-text-header">AGREEMENT TO OUR LEGAL TERMS</div>
     <div class="law-text-paragraph">
       We are Mendoka ("Company," "we," "us," "our"), a company registered in
-      Thailand, 108/1 Moo 9 Nakorn Chedi, Pa Sang, Lamphun, TX 51120.
+      Thailand, 108/1 Moo 9, Nakorn Chedi Subdistrict, Pa Sang District, Lamphun
+      Province, 51120, Thailand
     </div>
     <div class="law-text-paragraph">
       These Terms of Service and End User License Agreement (the “Terms”) are an
@@ -29,7 +30,8 @@
     </div>
     <div class="law-text-paragraph">
       You can contact us by email at contact@mendoka.com or by mail to 108/1 Moo
-      9 Nakorn Chedi, Pa Sang, Lamphun, TX 51120, Thailand.
+      9, Nakorn Chedi Subdistrict, Pa Sang District, Lamphun Province, 51120,
+      Thailand
     </div>
     <div class="law-text-paragraph">
       These Legal Terms constitute a legally binding agreement made between you,
@@ -99,9 +101,12 @@
           >
         </li>
         <li>
-          <a href="#prohibited-activities" class="law-list-text"
-            >CODE OF CONDUCT</a
+          <a href="#random-item-system" class="law-list-text"
+            >RANDOM ITEM SYSTEM</a
           >
+        </li>
+        <li>
+          <a href="#code-of-conduct" class="law-list-text">CODE OF CONDUCT</a>
         </li>
         <li>
           <a href="#user-generated-contributions" class="law-list-text"
@@ -221,9 +226,12 @@
     </div>
     <div class="law-text-sub-header">Your use of our Services</div>
     <div class="law-text-paragraph">
-      Subject to your compliance with these Legal Terms, including the "CODE OF
-      CONDUCT" section below, we grant you a non-exclusive, non-transferable,
-      revocable license to:
+      Subject to your compliance with these Legal Terms, including the
+      <a href="#code-of-conduct" class="hover:cursor-pointer underline"
+        >CODE OF CONDUCT</a
+      >
+      section below, we grant you a non-exclusive, non-transferable, revocable
+      license to:
     </div>
     <div class="law-text-paragraph">
       <ul class="pl-14 list-disc">
@@ -265,10 +273,10 @@
     </div>
     <div class="law-text-sub-header">Your submissions</div>
     <div class="law-text-paragraph">
-      Please review this section and the "CODE OF CONDUCT" section carefully
-      prior to using our Services to understand the (a) rights you give us and
-      (b) obligations you have when you post or upload any content through the
-      Services.
+      Please review this section and the <a href="code-of"></a> section
+      carefully prior to using our Services to understand the (a) rights you
+      give us and (b) obligations you have when you post or upload any content
+      through the Services.
     </div>
     <div class="law-text-paragraph">
       <a class="font-semibold">Submissions</a>
@@ -288,9 +296,12 @@
     <div class="law-text-paragraph">
       <ul class="pl-14 list-disc">
         <li class="law-list-text">
-          confirm that you have read and agree with our "CODE OF CONDUCT" and
-          will not post, send, publish, upload, or transmit through the Services
-          any Submission that is illegal, harassing, hateful, harmful,
+          confirm that you have read and agree with our
+          <a href="#code-of-conduct" class="hover:cursor-pointer underline"
+            >CODE OF CONDUCT</a
+          >
+          and will not post, send, publish, upload, or transmit through the
+          Services any Submission that is illegal, harassing, hateful, harmful,
           defamatory, obscene, bullying, abusive, discriminatory, threatening to
           any person or group, sexually explicit, false, inaccurate, deceitful,
           or misleading.
@@ -462,7 +473,7 @@
     </div>
     <div class="law-text-paragraph">
       If you receive a refund or initiate a chargeback by any means other than
-      those outlined in our refund policies, any virtual currency and virtual
+      those outlined in our "REFUNDS POLICY", any virtual currency and virtual
       items associated with the refunded or charged back transaction will be
       deleted or removed from your account.
     </div>
@@ -478,9 +489,59 @@
       provided within the Services. You may not use virtual currency or items
       for any unauthorized purposes or outside of the Services.
     </div>
-    <div id="prohibited-activities" class="law-text-header">
-      CODE OF CONDUCT
+    <div id="random-item-system" class="law-text-header">
+      RANDOM ITEM SYSTEM
     </div>
+    <div class="law-text-paragraph">
+      The game includes a random item system, often referred to as "Gacha,"
+      where players can obtain virtual items through random chance. By using the
+      Gacha system, you acknowledge and accept that the items received are
+      determined randomly and that there is no guarantee of receiving any
+      specific item. Players must be at least 13 years old to use the Gacha
+      system, or have parental consent if under the age of 13.
+    </div>
+    <div class="law-text-paragraph">
+      Players may use in-game currency or real money to purchase opportunities
+      to use the Gacha system. All purchases are final, and no refunds will be
+      provided, except where required by applicable law. We are committed to
+      ensuring that the Gacha system is fair and transparent for all players.
+    </div>
+    <div class="law-text-paragraph">
+      The probabilities of obtaining different items through the Gacha system
+      will be disclosed within the game. These probabilities are determined by
+      the game's developers and may change from time to time. We will make
+      reasonable efforts to provide accurate information about the odds, but we
+      do not guarantee the accuracy or completeness of such information.
+    </div>
+    <div class="law-text-paragraph">
+      Players must comply with all applicable laws and regulations regarding the
+      use of the Gacha system. Any attempt to manipulate or exploit the Gacha
+      system is strictly prohibited and may result in penalties, including but
+      not limited to account suspension or termination. Spending limits and
+      parental controls are available to help manage in-game purchases.
+    </div>
+    <div class="law-text-paragraph">
+      All virtual items obtained through the Gacha system are owned by the game
+      developers and are licensed to the players for use within the game.
+      Virtual items cannot be transferred, sold, or exchanged for real money or
+      other items outside the game, except as expressly allowed within the
+      game's features.
+    </div>
+    <div class="law-text-paragraph">
+      We reserve the right to modify or discontinue the Gacha system at any time
+      without prior notice. In the event of any changes or termination of the
+      Gacha system, we will make reasonable efforts to notify players through
+      appropriate channels (e.g., in-game notifications, emails, or
+      announcements on the official website).
+    </div>
+    <div class="law-text-paragraph">
+      Any disputes arising from the use of the Gacha system shall be resolved in
+      accordance with the dispute resolution process outlined in the Terms of
+      Service. By using the Gacha system, you agree to waive any claims against
+      the game developers related to the operation or outcomes of the Gacha
+      system, except as required by applicable law.
+    </div>
+    <div id="code-of-conduct" class="law-text-header">CODE OF CONDUCT</div>
     <div class="law-text-paragraph">
       You will not use the Services in any manner that, in Mendoka’s sole
       discretion, is unlawful or could damage, disable, overburden, or impair
@@ -909,15 +970,19 @@
     <div id="privacy-policy" class="law-text-header">PRIVACY POLICY</div>
     <div class="law-text-paragraph">
       We care about data privacy and security. Please review our Privacy Policy:
-      https://spirehorizon.com/privacy_policy. By using the Services, you agree
-      to be bound by our Privacy Policy, which is incorporated into these Legal
-      Terms. Please be advised the Services are hosted in Thailand. If you
-      access the Services from any other region of the world with laws or other
-      requirements governing personal data collection, use, or disclosure that
-      differ from applicable laws in Thailand, then through your continued use
-      of the Services, you are transferring your data to Thailand, and you
-      expressly consent to have your data transferred to and processed in
-      Thailand.
+      <a
+        class="underline"
+        target="_blank"
+        href="https://mendoka.com/privacy_policy"
+        >https://mendoka.com/privacy_policy</a
+      >. By using the Services, you agree to be bound by our Privacy Policy,
+      which is incorporated into these Legal Terms. Please be advised the
+      Services are hosted in Thailand. If you access the Services from any other
+      region of the world with laws or other requirements governing personal
+      data collection, use, or disclosure that differ from applicable laws in
+      Thailand, then through your continued use of the Services, you are
+      transferring your data to Thailand, and you expressly consent to have your
+      data transferred to and processed in Thailand.
     </div>
     <div class="law-text-paragraph">
       Further, we do not knowingly accept, request, or solicit information from
@@ -1213,7 +1278,10 @@
     </div>
     <div class="law-text-paragraph">
       <div>Mendoka</div>
-      <div>108/1 Moo 9 Nakorn Chedi, Pa Sang, Lamphun, TX 51120, Thailand</div>
+      <div>
+        108/1 Moo 9, Nakorn Chedi Subdistrict, Pa Sang District, Lamphun
+        Province, 51120, Thailand
+      </div>
       <div>contact@mendoka.com</div>
     </div>
   </div>
