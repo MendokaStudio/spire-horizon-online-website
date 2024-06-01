@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import axios from "axios";
 import { TimestampNow } from "@/script/utilityFunction";
 
-const API_BASE_URL = import.meta.env.VITE_APP_API_BASE_URL;
+const API_BASE_URL = import.meta.env.SECRET_API_BASE_URL;
 
 export const useSteamKeyStore = defineStore("steamkey", {
   state: () => ({

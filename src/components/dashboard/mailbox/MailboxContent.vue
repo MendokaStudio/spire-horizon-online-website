@@ -104,7 +104,7 @@ const handleSendItemToUID = async () => {
   const input = prompt(
     "[ Sending Item to Single Player ]\nEnter Private Key to Continue:"
   );
-  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
+  if (input === import.meta.env.SECRET_PRIVATE_KEY) {
     //Continue Function Here
     isLoading.value = true;
     successMsg.value = "";
@@ -163,7 +163,7 @@ const handleSendItemToMultiplePlayer = async () => {
   const input = prompt(
     "[ Sending Item to Multiple Player ]\nEnter Private Key to Continue:"
   );
-  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
+  if (input === import.meta.env.SECRET_PRIVATE_KEY) {
     //Continue Function Here
     isLoading.value = true;
     successMsg.value = "";
@@ -217,7 +217,7 @@ const handleSendItemToAllPlayer = async () => {
   const input = prompt(
     "[ Sending Item to All Player ]\nEnter Private Key to Continue:"
   );
-  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
+  if (input === import.meta.env.SECRET_PRIVATE_KEY) {
     //Continue Function Here
     isLoading.value = true;
     successMsg.value = "";

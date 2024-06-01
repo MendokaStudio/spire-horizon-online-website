@@ -71,7 +71,7 @@ const formatTimestamp = (timestamp) => {
 
 const handleUpdateCurrency = async (data) => {
   const input = prompt("[ Update Currency ]\nEnter Private Key to Continue:");
-  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
+  if (input === import.meta.env.SECRET_PRIVATE_KEY) {
     //Continue Function Here
     isLoading.value = true;
     currencyStore.updateCurrency(
@@ -90,7 +90,7 @@ const handleUpdateCurrency = async (data) => {
 
 const handleBanPlayer = async (isBan) => {
   const input = prompt("[ Player Ban ]\nEnter Private Key to Continue:");
-  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
+  if (input === import.meta.env.SECRET_PRIVATE_KEY) {
     //Continue Function Here
     isLoading.value = true;
     await playerStore.updatePlayerInfo(playerStore.player.UID, {
@@ -136,7 +136,7 @@ const resetProgress = () => {
 
 const handleDeletePlayerData = async () => {
   const input = prompt("[ Delete Player ]\nEnter Private Key to Continue:");
-  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
+  if (input === import.meta.env.SECRET_PRIVATE_KEY) {
     isLoading.value = true;
     await playerStore.deletePlayerData(playerStore.player.UID);
     isLoading.value = false;
