@@ -30,7 +30,7 @@ onMounted(async () => {
         class="lg:w-[600px] lg:h-[600px] w-[500px] h-[470px] bg-[url('../image/elements/modal_background.png')] bg-[length:100%_100%]"
       >
         <div
-          class="flex justify-center items-center mt-6 md:mt-7 lg:mt-8 flex-col space-y-6 w-fit mx-auto p-2 rounded-xl shadow-xl"
+          class="flex justify-center items-center mt-6 md:mt-7 lg:mt-14 flex-col space-y-6 w-fit mx-auto p-2 rounded-xl shadow-xl"
         >
           <div class="lg:text-2xl text-lg px-6 py-2 flex">
             Playtest Remaining Keys:
