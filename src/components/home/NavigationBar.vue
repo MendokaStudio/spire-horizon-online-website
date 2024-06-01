@@ -19,42 +19,62 @@ const utilityStore = useUtilityStore();
       <div class="items-center flex justify-center w-full static z-10">
         <div class="mobile-navbar-vertical-left"></div>
         <div
-          @click="utilityStore.SmoothChangeContent(router, 'homeContent')"
+          @click="utilityStore.SmoothChangeContent(router, 'Home')"
           class="mobile-navbar-button"
         >
-          Home
+          <img
+            src="../../image/icons/Icon_Home.png"
+            alt=""
+            class="w-8 h-8 opacity-80"
+          />
         </div>
         <div class="mobile-navbar-vertical-right"></div>
         <div class="mobile-navbar-vertical-left"></div>
         <div
-          @click="utilityStore.SmoothChangeContent(router, 'preregister')"
+          @click="utilityStore.SmoothChangeContent(router, 'News')"
           class="mobile-navbar-button"
         >
-          Icon1
+          <img
+            src="../../image/icons/T_Coins.png"
+            alt=""
+            class="w-14 h-14 opacity-80"
+          />
         </div>
         <div class="mobile-navbar-vertical-right"></div>
         <div class="mobile-navbar-vertical-left"></div>
         <div
-          @click="utilityStore.SmoothChangeContent(router, 'classes')"
+          @click="utilityStore.SmoothChangeContent(router, 'Classes')"
           class="mobile-navbar-button"
         >
-          Icon2
+          <img
+            src="../../image/icons/F_Gloves-512.png"
+            alt=""
+            class="w-14 h-14 opacity-80"
+          />
         </div>
         <div class="mobile-navbar-vertical-right"></div>
         <div class="mobile-navbar-vertical-left"></div>
         <div
-          @click="utilityStore.SmoothChangeContent(router, 'cards')"
+          @click="utilityStore.SmoothChangeContent(router, 'Cards')"
           class="mobile-navbar-button"
         >
-          Icon3
+          <img
+            src="../../image/icons/C_MonsterCard-512.png"
+            alt=""
+            class="w-11 h-11 opacity-80"
+          />
         </div>
         <div class="mobile-navbar-vertical-right"></div>
         <div class="mobile-navbar-vertical-left"></div>
         <div
-          @click="utilityStore.SmoothChangeContent(router, 'ranking')"
+          @click="utilityStore.SmoothChangeContent(router, 'Ranking')"
           class="mobile-navbar-button"
         >
-          Icon4
+          <img
+            src="../../image/icons/W_Great-Sword-512.png"
+            alt=""
+            class="w-12 h-12 opacity-80"
+          />
         </div>
       </div>
     </div>

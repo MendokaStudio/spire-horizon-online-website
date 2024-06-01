@@ -28,10 +28,6 @@ const CardsContent = () => import("../components/home/CardsContent.vue");
 const RankingContent = () => import("../components/home/RankingContent.vue");
 const CopyrightContent = () =>
   import("../components/home/CopyrightContent.vue");
-const PrivacyPolicyContent = () =>
-  import("../components/home/PrivacyPolicyContent.vue");
-const TermsOfService = () => import("../components/home/TermsOfService.vue");
-const EulaContent = () => import("../components/home/EulaContent.vue");
 
 const routes = [
   {
