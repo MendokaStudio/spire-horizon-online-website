@@ -131,7 +131,6 @@ router.beforeEach(async (to, from, next) => {
   if (isProtected) {
     if (!ipAddressStore.myIP) {
       await ipAddressStore.getMyIp();
-      console.log(ipAddressStore.myIP);
       if (!IpChecker(ipAddressStore.myIP)) {
         return next({ path: "/" });
       }
