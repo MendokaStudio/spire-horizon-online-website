@@ -26,15 +26,10 @@ onMounted(() => {
 
 <template>
   <div class="relative h-screen overflow-hidden">
-    <div
-      v-if="!isCompleteOpening"
-      class="absolute top-0 left-0 w-full h-full object-cover z-50 bg-black"
-      :style="{ opacity: videoOpacity / 100 }"
-    ></div>
     <!-- Opening Video -->
     <video
       v-if="!isCompleteOpening"
-      class="absolute top-0 left-0 w-full h-full object-cover z-50 scale-90"
+      class="absolute top-0 left-0 w-full h-full object-cover z-50"
       :style="{ opacity: videoOpacity / 100 }"
       autoplay
       muted
