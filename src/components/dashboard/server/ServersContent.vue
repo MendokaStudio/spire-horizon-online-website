@@ -60,7 +60,7 @@ const clearAllVariable = () => {
 
 const handleUpdateServerData = async () => {
   const input = prompt("[ Adding Server ]\nEnter Private Key to Continue:");
-  if (input === import.meta.env.SECRET_PRIVATE_KEY) {
+  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
     //Continue Function Here
     isLoading.value = true;
     successMsg.value = "";
@@ -135,7 +135,7 @@ const handleAddServer = async () => {
   }
 
   const input = prompt("[ Adding Server ]\nEnter Private Key to Continue:");
-  if (input === import.meta.env.SECRET_PRIVATE_KEY) {
+  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
     //Continue Function Here
     isLoading.value = true;
     successMsg.value = "";
@@ -171,7 +171,7 @@ const handleAddServer = async () => {
 };
 const handleDeleteServer = async (serverID) => {
   const input = prompt("[ Deleting Server ]\nEnter Private Key to Continue:");
-  if (input === import.meta.env.SECRET_PRIVATE_KEY) {
+  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
     //Continue Function Here
     isLoading.value = true;
     successMsg.value = "";
@@ -188,7 +188,7 @@ const handleChangeServerStatus = async (serverID, status) => {
   const input = prompt(
     "[ Changing Server Status ]\nEnter Private Key to Continue:"
   );
-  if (input === import.meta.env.SECRET_PRIVATE_KEY) {
+  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
     //Continue Function Here
     isLoading.value = true;
     successMsg.value = "";
@@ -205,7 +205,7 @@ const handleChangeServerAccess = async (serverID, status) => {
   const input = prompt(
     "[ Changing Accessible ]\nEnter Private Key to Continue:"
   );
-  if (input === import.meta.env.SECRET_PRIVATE_KEY) {
+  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
     //Continue Function Here
     isLoading.value = true;
     successMsg.value = "";

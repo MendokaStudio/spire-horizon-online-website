@@ -109,7 +109,7 @@ const handleDeleteRedeemCode = async (code) => {
   const input = prompt(
     "[ Delete Redeem Code ]\nEnter Private Key to Continue:"
   );
-  if (input === import.meta.env.SECRET_PRIVATE_KEY) {
+  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
     //Continue Function Here
 
     await redeemStore.deleteRedeemCode(code);

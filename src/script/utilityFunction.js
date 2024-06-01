@@ -74,16 +74,16 @@ export const TimestampNow = () => {
 
 export const AdminChecker = (uid) => {
   return (
-    uid === import.meta.env.SECRET_ADMIN_UID_01 ||
-    uid === import.meta.env.SECRET_ADMIN_UID_02 ||
-    uid === import.meta.env.SECRET_ADMIN_UID_03
+    uid === import.meta.env.VITE_APP_ADMIN_UID_01 ||
+    uid === import.meta.env.VITE_APP_ADMIN_UID_02 ||
+    uid === import.meta.env.VITE_APP_ADMIN_UID_03
   );
 };
 
 export const IpChecker = (ip) => {
   return (
-    ip === import.meta.env.SECRET_ADMIN_IP_01 ||
-    ip === import.meta.env.SECRET_ADMIN_IP_02 ||
-    ip === import.meta.env.SECRET_ADMIN_IP_03
+    ip === import.meta.env.VITE_APP_ADMIN_IP_01 ||
+    ip === import.meta.env.VITE_APP_ADMIN_IP_02 ||
+    ip === import.meta.env.VITE_APP_ADMIN_IP_03
   );
 };

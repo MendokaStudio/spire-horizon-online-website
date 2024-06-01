@@ -98,7 +98,7 @@ const handleUpdateOrDeleteItem = async () => {
   const input = prompt(
     "[ Manage Player Item ]\nEnter Private Key to Continue:"
   );
-  if (input === import.meta.env.SECRET_PRIVATE_KEY) {
+  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
     //Continue Function Here
     endPress();
     const itemModal = new Modal(

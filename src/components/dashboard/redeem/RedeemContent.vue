@@ -106,7 +106,7 @@ const handleAddRedeemCode = async () => {
   }
 
   const input = prompt("[ Add Redeem Code ]\nEnter Private Key to Continue:");
-  if (input === import.meta.env.SECRET_PRIVATE_KEY) {
+  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
     //Continue Function Here
     isLoading.value = true;
     successMsg.value = "";
