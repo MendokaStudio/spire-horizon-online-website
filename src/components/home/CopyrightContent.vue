@@ -1,17 +1,8 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useUtilityStore } from "../../stores/utilityStore";
-import { useRouter } from "vue-router";
 
-const router = useRouter();
 const utilityStore = useUtilityStore();
-
-const errMsg = ref("");
-
-const openInNewTab = (path) => {
-  const routeData = router.resolve({ path: path });
-  window.open(routeData.href, "_blank");
-};
 
 onMounted(() => {
   utilityStore.ContentReveal();
@@ -39,16 +30,20 @@ onMounted(() => {
               class="w-6/12 mx-auto"
             />
           </div>
-          <p class="text-sm lg:text-lg">&copy; 2024 Mendoka. All rights reserved.</p>
+          <p class="text-sm lg:text-lg">
+            &copy; 2024 Mendoka. All rights reserved.
+          </p>
           <p class="text-sm lg:text-lg">
             Contact: contact@mendoka.com丨
             <a
-              @click="openInNewTab('/privacy_policy')"
+              href="https://www.mendoka.com/privacy-policy"
+              target="_blank"
               class="text-yellow-300 hover:cursor-pointer"
               >Privacy Policy</a
             >丨
             <a
-              @click="openInNewTab('/terms_of_service')"
+              href="https://www.mendoka.com/terms-of-service"
+              target="_blank"
               class="text-yellow-300 hover:cursor-pointer"
               >Terms of Service</a
             >
