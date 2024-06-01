@@ -74,7 +74,7 @@ const handleUpdateCurrency = async (data) => {
   if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
     //Continue Function Here
     isLoading.value = true;
-    currencyStore.updateCurrency(
+    await currencyStore.updateCurrency(
       playerStore.player.UID,
       data.currency,
       data.amount
