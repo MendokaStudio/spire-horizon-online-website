@@ -10,6 +10,7 @@ const copyOpacity = ref(0);
 
 onMounted(() => {
   utilityStore.ContentReveal();
+  utilityStore.isShowCopyright = true
 });
 
 const CopyUrl = () => {

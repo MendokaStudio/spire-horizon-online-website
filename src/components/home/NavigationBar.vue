@@ -25,7 +25,7 @@ const utilityStore = useUtilityStore();
           <img
             src="../../image/icons/Icon_Home.png"
             alt=""
-            class="w-8 h-8 opacity-80"
+            class="w-6 h-6 opacity-80"
           />
         </div>
         <div class="mobile-navbar-vertical-right"></div>
@@ -37,7 +37,7 @@ const utilityStore = useUtilityStore();
           <img
             src="../../image/icons/T_Coins.png"
             alt=""
-            class="w-14 h-14 opacity-80"
+            class="w-10 h-10 opacity-80"
           />
         </div>
         <div class="mobile-navbar-vertical-right"></div>
@@ -49,7 +49,7 @@ const utilityStore = useUtilityStore();
           <img
             src="../../image/icons/F_Gloves-512.png"
             alt=""
-            class="w-14 h-14 opacity-80"
+            class="w-10 h-10 opacity-80"
           />
         </div>
         <div class="mobile-navbar-vertical-right"></div>
@@ -61,7 +61,7 @@ const utilityStore = useUtilityStore();
           <img
             src="../../image/icons/C_MonsterCard-512.png"
             alt=""
-            class="w-11 h-11 opacity-80"
+            class="w-8 h-8 opacity-80"
           />
         </div>
         <div class="mobile-navbar-vertical-right"></div>
@@ -73,7 +73,7 @@ const utilityStore = useUtilityStore();
           <img
             src="../../image/icons/W_Great-Sword-512.png"
             alt=""
-            class="w-12 h-12 opacity-80"
+            class="w-8 h-8 opacity-80"
           />
         </div>
       </div>
@@ -142,7 +142,7 @@ const utilityStore = useUtilityStore();
 
       <!-- Images -->
       <div
-        class="static w-8/12 sm:w-9/12 md:w-6/12 lg:w-5/12 xl:w-4/12 mt-10 flex justify-center"
+        class="static w-8/12 sm:w-9/12 md:w-6/12 lg:w-5/12 xl:w-4/12 mt-3 md:mt-10 flex justify-center"
       >
         <img
           src="../../image/logos/logo_glow.png"

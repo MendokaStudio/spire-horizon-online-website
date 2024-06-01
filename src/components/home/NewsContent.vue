@@ -15,11 +15,6 @@ const handleGetSteamKey = async () => {
   email.value = "";
 };
 
-const openInNewTab = (path) => {
-  const routeData = router.resolve({ path: path });
-  window.open(routeData.href, "_blank");
-};
-
 onMounted(async () => {
   utilityStore.ContentReveal();
   await steamKeyStore.getSteamKeyRemain();
@@ -32,7 +27,7 @@ onMounted(async () => {
   >
     <div class="w-full h-full flex items-center justify-center relative px-2">
       <div
-        class="lg:w-[600px] lg:h-[600px] w-[500px] h-[500px] bg-[url('../image/elements/modal_background.png')] bg-[length:100%_100%]"
+        class="lg:w-[600px] lg:h-[600px] w-[500px] h-[470px] bg-[url('../image/elements/modal_background.png')] bg-[length:100%_100%]"
       >
         <div
           class="flex justify-center items-center mt-6 md:mt-7 lg:mt-8 flex-col space-y-6 w-fit mx-auto p-2 rounded-xl shadow-xl"
@@ -95,13 +90,15 @@ onMounted(async () => {
             <div class="text-xs max-w-72 text-center pt-2">
               Please read and agree to the
               <a
-                @click="openInNewTab('/privacy_policy')"
+                href="https://www.mendoka.com/privacy-policy"
+                target="_blank"
                 class="text-yellow-300 hover:cursor-pointer"
                 >Privacy Policy</a
               >
               and
               <a
-                @click="openInNewTab('/terms_of_service')"
+                href="https://www.mendoka.com/terms-of-service"
+                target="_blank"
                 class="text-yellow-300 hover:cursor-pointer"
                 >Terms of Service</a
               >
@@ -110,9 +107,8 @@ onMounted(async () => {
           </form>
 
           <div class="max-w-96 text-center px-8 text-xs lg:text-lg">
-            To participate in the playtest, you must enter your email to receive
-            a Steam key. After the playtest concludes, all keys, including old
-            and new ones, will be revoked.
+            After the playtest concludes, all keys, including old and new ones,
+            will be revoked.
           </div>
           <div
             class="max-w-[600px] text-center text:sm lg:text-xl px-8 text-yellow-300"
