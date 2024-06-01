@@ -65,50 +65,6 @@ const routes = [
     },
   },
   {
-    path: "/privacy_policy",
-    name: "PrivacyPolicy",
-    component: PrivacyPolicyContent,
-    meta: {
-      requiresAuth: false,
-      requiresAdminAuth: false,
-      showNavBar: false,
-      isProtected: false,
-    },
-  },
-  {
-    path: "/terms_of_service",
-    name: "TermsOfService",
-    component: TermsOfService,
-    meta: {
-      requiresAuth: false,
-      requiresAdminAuth: false,
-      showNavBar: false,
-      isProtected: false,
-    },
-  },
-  {
-    path: "/eula",
-    name: "EULA",
-    component: EulaContent,
-    meta: {
-      requiresAuth: false,
-      requiresAdminAuth: false,
-      showNavBar: false,
-      isProtected: false,
-    },
-  },
-  {
-    path: "/login",
-    name: "Login",
-    component: LoginView,
-    meta: {
-      requiresAuth: false,
-      requiresAdminAuth: false,
-      showNavBar: false,
-      isProtected: true,
-    },
-  },
-  {
     path: "/",
     name: "",
     component: HomeView,
@@ -152,8 +108,8 @@ const routes = [
     },
   },
   {
-    path: "/:pathMatch(.*)*", // Catch-all route for 404
-    redirect: "/", // Redirect to home or any other route
+    path: "/:pathMatch(.*)*",
+    redirect: "/",
   },
 ];
 
