@@ -165,6 +165,7 @@ const handleDeleteRedeemCode = async (code) => {
           <th scope="col" class="px-6 py-3">Item ID</th>
           <th scope="col" class="px-6 py-3">Quantity</th>
           <th scope="col" class="px-6 py-3">Item Data</th>
+          <th scope="col" class="px-6 py-3">One Time Use</th>
           <th scope="col" class="px-6 py-3">Expire Day</th>
           <th scope="col" class="px-6 py-3">Expire In</th>
           <th scope="col" class="px-6 py-3">Expire Date</th>
@@ -192,6 +193,9 @@ const handleDeleteRedeemCode = async (code) => {
                 {{ key }}: {{ data }}
               </div>
             </div>
+          </td>
+          <td class="px-6 py-4">
+            {{ code.oneTimeUse ? "Yes" : "No" }}
           </td>
           <td class="px-6 py-4">
             {{ code.ExpireIn }}

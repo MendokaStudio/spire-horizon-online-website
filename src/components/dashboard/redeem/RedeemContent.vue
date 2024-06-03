@@ -23,9 +23,12 @@ const redeemStore = useRedeemStore();
 
 const redeemCode = ref("");
 const itemID = ref("");
-const quantity = ref(0);
+const quantity = ref(1);
 const expireDay = ref(0);
 const mailTitle = ref("");
+
+const codeQuantity = ref(1);
+const oneTimeUse = ref(false);
 
 const isLoading = ref(false);
 const successMsg = ref("");
@@ -41,11 +44,12 @@ const clearAllVariable = () => {
   redeemCode.value = "";
   expireDay.value = "";
   itemID.value = "";
-  quantity.value = 0;
+  quantity.value = 1;
   mailTitle.value = "";
   itemData.value = "";
   selectedItemData.value = "";
   itemDataValue.value = "";
+  codeQuantity.value = 1;
 };
 
 const handleGetAllRedeemCode = async () => {
@@ -121,6 +125,7 @@ const handleAddRedeemCode = async () => {
       Quantity: quantity.value,
       ExpireIn: expireDay.value,
       ItemData: formatedItemData,
+      oneTimeUse: oneTimeUse.value,
     };
 
     try {
@@ -138,6 +143,79 @@ const handleAddRedeemCode = async () => {
       updatingMsg.value = "";
       errorMsg.value = errorFormat(error.message);
     }
+  } else {
+    alert("Private Key Mismatch!");
+  }
+};
+
+function getRandomString(length = 16) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+
+const handleAddMultipleRedeemCode = async () => {
+  //Empty check
+  if (codeQuantity.value <= 1) {
+    updatingMsg.value = "";
+    successMsg.value = "";
+    errorMsg.value = "The code quantity should mroe than 1!";
+    return;
+  } else if (itemID.value == "") {
+    updatingMsg.value = "";
+    successMsg.value = "";
+    errorMsg.value = "The item ID should not be empty!";
+    return;
+  } else if (quantity.value == "") {
+    updatingMsg.value = "";
+    successMsg.value = "";
+    errorMsg.value = "The quantity should not be 0!";
+    return;
+  }
+
+  const input = prompt(
+    "[ Add Multiple Redeem Code ]\nEnter Private Key to Continue:"
+  );
+  if (input === import.meta.env.VITE_APP_PRIVATE_KEY) {
+    //Continue Function Here
+    isLoading.value = true;
+    successMsg.value = "";
+    errorMsg.value = "";
+    updatingMsg.value = "Adding Multiple Redeem Code";
+
+    const formatedItemData = formatItemDataToObject(itemData.value);
+
+    for (let i = 0; i < codeQuantity.value; i++) {
+      const data = {
+        Code: getRandomString().toUpperCase(),
+        ItemID: itemID.value,
+        Quantity: quantity.value,
+        ExpireIn: expireDay.value,
+        ItemData: formatedItemData,
+        oneTimeUse: oneTimeUse.value,
+      };
+
+      try {
+        console.log(data.Code);
+        await redeemStore.addRedeemCode(data);
+      } catch (error) {
+        isLoading.value = false;
+        updatingMsg.value = "";
+        errorMsg.value = errorFormat(error.message);
+        return;
+      }
+    }
+    await handleGetAllRedeemCode();
+    setTimeout(async () => {
+      isLoading.value = false;
+      updatingMsg.value = "";
+      successMsg.value = "Success! redeem code has been added";
+      clearAllVariable();
+    }, 1000);
   } else {
     alert("Private Key Mismatch!");
   }
@@ -210,6 +288,20 @@ const handleAddRedeemCode = async () => {
                 type="number"
                 id="expireDay"
                 v-model="expireDay"
+                placeholder="30"
+                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+              />
+            </div>
+            <div class="mb-5">
+              <label
+                for="codeQuantity"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Code Quantity</label
+              >
+              <input
+                type="number"
+                id="codeQuantity"
+                v-model="codeQuantity"
                 placeholder="30"
                 class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
               />
@@ -292,6 +384,22 @@ const handleAddRedeemCode = async () => {
                 </button>
               </div>
             </div>
+
+            <label class="inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                value="true"
+                class="sr-only peer"
+                v-model="oneTimeUse"
+              />
+              <div
+                class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+              ></div>
+              <span
+                class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >One time use ?</span
+              >
+            </label>
           </div>
         </div>
         <StatusHandling
@@ -311,6 +419,15 @@ const handleAddRedeemCode = async () => {
             class="text-white min-w-36 w-full bg-green-700 hover:bg-green-800 ease-in-out disabled:bg-gray-300 disabled:ring-0 duration-500 hover:ring-2 focus:outline-none hover:ring-green-300 font-medium rounded-lg text-sm py-2.5 text-center"
           >
             <div v-if="!isLoading">Add Redeem Code</div>
+            <LoadingIcon v-if="isLoading" />
+          </button>
+          <button
+            type="button"
+            :disabled="isLoading"
+            @click="handleAddMultipleRedeemCode"
+            class="text-white min-w-36 w-full bg-yellow-700 hover:bg-yellow-800 ease-in-out disabled:bg-gray-300 disabled:ring-0 duration-500 hover:ring-2 focus:outline-none hover:ring-yellow-300 font-medium rounded-lg text-sm py-2.5 text-center"
+          >
+            <div v-if="!isLoading">Add Multiple Redeem Code</div>
             <LoadingIcon v-if="isLoading" />
           </button>
         </div>
