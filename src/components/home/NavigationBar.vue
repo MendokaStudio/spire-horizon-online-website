@@ -3,7 +3,7 @@ import { useRouter } from "vue-router";
 import { useUtilityStore } from "../../stores/utilityStore";
 import { onMounted, ref } from "vue";
 import { useAudioStore } from "../../stores/audio";
-import audioFile from "../../sound/IntroMusic.mp3";
+
 
 const router = useRouter();
 const utilityStore = useUtilityStore();
@@ -16,7 +16,7 @@ const isAudioOn = ref(false);
 // ฟังก์ชันเพื่อเริ่มการเล่นเสียงหลังจากผู้ใช้โต้ตอบ
 const initAudio = () => {
   if (!isInitialized.value) {
-    audioStore.loadAudio(audioFile);
+    audioStore.loadAudio();
     audioStore.playAudio();
     isAudioOn.value = true;
     isInitialized.value = true;
@@ -37,17 +37,15 @@ onMounted(() => {
 const playAudio = () => {
   if (isInitialized.value) {
     audioStore.playAudio();
-    isAudioOn.value = true;
   }
 };
 
 const pauseAudio = () => {
   audioStore.pauseAudio();
-  isAudioOn.value = false;
 };
 
 const toggleAudio = () => {
-  if (isAudioOn.value) {
+  if (audioStore.isPlaying) {
     pauseAudio();
   } else {
     playAudio();
@@ -136,7 +134,7 @@ const toggleAudio = () => {
       <!-- Empty Div -->
       <div
         :class="
-          isAudioOn
+          audioStore.isPlaying
             ? 'w-full hidden lg:flex lg:w-4/12 animate-pulse opacity-90'
             : 'w-full hidden lg:flex lg:w-4/12 opacity-50'
         "
@@ -146,12 +144,12 @@ const toggleAudio = () => {
           @click="toggleAudio()"
         >
           <img
-            v-if="isAudioOn"
+            v-if="audioStore.isPlaying"
             src="../../image/icons/guitar_play.png"
             alt=""
           />
           <img
-            v-if="!isAudioOn"
+            v-if="!audioStore.isPlaying"
             src="../../image/icons/guitar_mute.png"
             alt=""
           />

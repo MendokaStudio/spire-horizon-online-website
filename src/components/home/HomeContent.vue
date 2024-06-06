@@ -1,9 +1,11 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useUtilityStore } from "../../stores/utilityStore";
+import { useAudioStore } from "../../stores/audio";
 
 const utilityStore = useUtilityStore();
 
+const audioStore = useAudioStore();
 const isShowTrailer = ref(false);
 const isCopying = ref(false);
 const copyOpacity = ref(0);
@@ -47,6 +49,12 @@ const openUrl = (url) => {
 
 const ToggleTrailer = () => {
   isShowTrailer.value = !isShowTrailer.value;
+
+  if (isShowTrailer.value) {
+    audioStore.pauseAudio();
+  } else {
+    audioStore.playAudio();
+  }
 };
 </script>
 

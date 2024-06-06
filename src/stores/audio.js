@@ -2,17 +2,18 @@
 
 import { defineStore } from "pinia";
 import { ref, onUnmounted } from "vue";
+import audioFile from "../sound/IntroMusic.mp3";
 
 export const useAudioStore = defineStore("audio", () => {
   const audio = ref(null);
   const isPlaying = ref(false);
 
   // โหลดไฟล์เสียงเมื่อ store ถูกสร้าง
-  const loadAudio = (src) => {
+  const loadAudio = () => {
     if (audio.value) {
       audio.value.pause();
     }
-    audio.value = new Audio(src);
+    audio.value = new Audio(audioFile);
     audio.value.addEventListener("ended", () => {
       isPlaying.value = false;
     });
