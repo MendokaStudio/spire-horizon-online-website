@@ -38,7 +38,6 @@ onMounted(() => {
     </video>
     <!-- Background Video -->
     <video
-      v-if="isCompleteOpening"
       class="absolute top-0 left-0 w-full h-full object-cover object-[-280px] xl:object-center"
       autoplay
       muted
