@@ -45,7 +45,11 @@ export const useSteamKeyStore = defineStore("steamkey", {
 
       if (TimestampNow() - lastSteamKeyClaimTime > 86400) {
         const requestFn = () =>
-          axios.post(`${API_BASE_URL}/api/steam/getkey`, { email });
+          axios.post(
+            `${API_BASE_URL}/api/steam/getkey`,
+            { email },
+            { withCredentials: true }
+          );
         const data = await this.handleRequest(requestFn);
         localStorage.setItem("lastSteamKeyClaimTime", TimestampNow());
         this.remainKey -= 1;
