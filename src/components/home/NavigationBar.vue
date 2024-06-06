@@ -111,7 +111,7 @@ const utilityStore = useUtilityStore();
             @click="utilityStore.SmoothChangeContent(router, 'News')"
             class="navbar-button"
           >
-            News
+            Playtest
           </div>
           <div class="navbar-vertical-right"></div>
           <div class="navbar-vertical-left"></div>
