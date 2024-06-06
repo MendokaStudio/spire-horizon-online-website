@@ -17,7 +17,7 @@ onMounted(() => {
 
 const CopyUrl = () => {
   navigator.clipboard
-    .writeText("https://spirehorizon.com/")
+    .writeText("https://sho.mendoka.com/")
     .then(function () {
       isCopying.value = true;
       const copyFadeIn = setInterval(() => {
