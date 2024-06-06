@@ -10,7 +10,7 @@ const copyOpacity = ref(0);
 
 onMounted(() => {
   utilityStore.ContentReveal();
-  utilityStore.isShowCopyright = true
+  utilityStore.isShowCopyright = true;
 });
 
 const CopyUrl = () => {
@@ -196,6 +196,7 @@ const ToggleTrailer = () => {
             <div class="flex space-x-6">
               <!-- App Store -->
               <button
+                disabled
                 type="button"
                 @click="openUrl('')"
                 class="store-button disabled:opacity-30 opacity-95"
@@ -209,6 +210,7 @@ const ToggleTrailer = () => {
 
               <!-- Google Play -->
               <button
+                disabled
                 type="button"
                 @click="openUrl('')"
                 class="store-button disabled:opacity-30 opacity-95"
@@ -226,7 +228,7 @@ const ToggleTrailer = () => {
                 type="button"
                 @click="
                   openUrl(
-                    'https://store.steampowered.com/app/2598020/Spire_Horizon_Online/?beta=1'
+                    'https://store.steampowered.com/app/2598020/Spire_Horizon_Online/'
                   )
                 "
                 class="store-button disabled:opacity-30 opacity-95"
@@ -239,6 +241,7 @@ const ToggleTrailer = () => {
               </button>
               <!-- Epic Store -->
               <button
+                disabled
                 type="button"
                 @click="openUrl('')"
                 class="store-button disabled:opacity-30 opacity-95"
