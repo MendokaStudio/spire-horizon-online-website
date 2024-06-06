@@ -8,6 +8,8 @@ const utilityStore = useUtilityStore();
 const steamKeyStore = useSteamKeyStore();
 const router = useRouter();
 
+const isPlaytestEnd = ref(false);
+
 const email = ref("");
 
 const handleGetSteamKey = async () => {
@@ -30,6 +32,7 @@ onMounted(async () => {
         class="lg:w-[600px] lg:h-[600px] w-[500px] h-[470px] bg-[url('../image/elements/modal_background.png')] bg-[length:100%_100%]"
       >
         <div
+          v-if="!isPlaytestEnd"
           class="flex justify-center items-center mt-6 md:mt-7 lg:mt-14 flex-col space-y-6 w-fit mx-auto p-2 rounded-xl shadow-xl"
         >
           <div class="lg:text-2xl text-lg px-6 py-2 flex">
@@ -115,6 +118,13 @@ onMounted(async () => {
           >
             The playtest will end on June 18, 2024.
           </div>
+        </div>
+
+        <div
+          v-if="isPlaytestEnd"
+          class="h-full flex justify-center items-center text-3xl text-gray-300"
+        >
+          The playtest has ended.
         </div>
       </div>
     </div>
