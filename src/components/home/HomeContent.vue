@@ -65,8 +65,8 @@ const ToggleTrailer = () => {
           >
             <iframe
               class="w-full h-full rounded-3xl object-contain"
-              src="https://www.youtube.com/embed/LxkN3GAXh7I"
-              title="Spire Horizon Official Trailer"
+              src="https://www.youtube.com/embed/b5Qm8XSE3oA"
+              title="Spire Horizon Online: Capybara Harmony"
               frameborder="0"
               allow="accelerometer; autoplay;  encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
