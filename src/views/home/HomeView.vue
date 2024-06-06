@@ -20,7 +20,7 @@ onMounted(() => {
         isCompleteOpening.value = true;
       }
     }, 5);
-  }, 2000);
+  }, 3000);
 });
 </script>
 
