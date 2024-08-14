@@ -203,7 +203,7 @@ const ToggleTrailer = () => {
           <div class="flex flex-col justify-between space-y-3">
             <div class="flex space-x-6">
               <!-- App Store -->
-              <button
+              <!-- <button
                 disabled
                 type="button"
                 @click="openUrl('')"
@@ -214,7 +214,7 @@ const ToggleTrailer = () => {
                   alt=""
                   class="w-full"
                 />
-              </button>
+              </button> -->
 
               <!-- Google Play -->
               <button
@@ -248,14 +248,14 @@ const ToggleTrailer = () => {
                 />
               </button>
               <!-- Epic Store -->
-              <button
+              <!-- <button
                 disabled
                 type="button"
                 @click="openUrl('')"
                 class="store-button disabled:opacity-30 opacity-95"
               >
                 <img src="../../image/socials/epic.png" alt="" class="w-full" />
-              </button>
+              </button> -->
             </div>
           </div>
         </div>

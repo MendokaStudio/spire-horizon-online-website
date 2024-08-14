@@ -22,7 +22,7 @@ const RedeemContent = () =>
 // User Route
 const HomeView = () => import("../views/home/HomeView.vue");
 const HomeContent = () => import("../components/home/HomeContent.vue");
-const NewsContent = () => import("../components/home/NewsContent.vue");
+const RoadmapContent = () => import("../components/home/RoadmapContent.vue");
 const ClassesContent = () => import("../components/home/ClassesContent.vue");
 const CardsContent = () => import("../components/home/CardsContent.vue");
 const RankingContent = () => import("../components/home/RankingContent.vue");
@@ -71,9 +71,9 @@ const routes = [
         name: "Home",
       },
       {
-        path: "news",
-        component: NewsContent,
-        name: "News",
+        path: "roadmap",
+        component: RoadmapContent,
+        name: "Roadmap",
       },
       {
         path: "classes",

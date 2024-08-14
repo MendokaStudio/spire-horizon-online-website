@@ -4,7 +4,6 @@ import { useUtilityStore } from "../../stores/utilityStore";
 import { onMounted, ref } from "vue";
 import { useAudioStore } from "../../stores/audio";
 
-
 const router = useRouter();
 const utilityStore = useUtilityStore();
 
@@ -78,7 +77,7 @@ const toggleAudio = () => {
         <div class="mobile-navbar-vertical-right"></div>
         <div class="mobile-navbar-vertical-left"></div>
         <div
-          @click="utilityStore.SmoothChangeContent(router, 'News')"
+          @click="utilityStore.SmoothChangeContent(router, 'Roadmap')"
           class="mobile-navbar-button"
         >
           <img
@@ -177,10 +176,10 @@ const toggleAudio = () => {
           <div class="navbar-vertical-right"></div>
           <div class="navbar-vertical-left"></div>
           <div
-            @click="utilityStore.SmoothChangeContent(router, 'News')"
+            @click="utilityStore.SmoothChangeContent(router, 'Roadmap')"
             class="navbar-button"
           >
-            Playtest
+            Roadmap
           </div>
           <div class="navbar-vertical-right"></div>
           <div class="navbar-vertical-left"></div>
