@@ -43,8 +43,8 @@ const routes = [
       { path: "redeem", component: RedeemContent },
     ],
     meta: {
-      requiresAuth: true,
-      requiresAdminAuth: true,
+      requiresAuth: false,
+      requiresAdminAuth: false,
       showNavBar: false,
       isProtected: true,
     },
@@ -118,48 +118,48 @@ router.beforeEach(async (to, from, next) => {
   const userStore = useUserStore();
   const ipAddressStore = useIpAddressStore();
 
-  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
-  const isProtected = to.matched.some((record) => record.meta.isProtected);
-  const requiresAdminAuth = to.matched.some(
-    (record) => record.meta.requiresAdminAuth
-  );
+  // const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
+  // const isProtected = to.matched.some((record) => record.meta.isProtected);
+  // const requiresAdminAuth = to.matched.some(
+  //   (record) => record.meta.requiresAdminAuth
+  // );
 
-  if (!requiresAuth && !requiresAdminAuth && !isProtected) {
-    return next();
-  }
+  // if (!requiresAuth && !requiresAdminAuth && !isProtected) {
+  //   return next();
+  // }
 
-  if (isProtected) {
-    if (!ipAddressStore.myIP) {
-      await ipAddressStore.getMyIp();
-      if (!IpChecker(ipAddressStore.myIP)) {
-        return next({ path: "/" });
-      }
-    } else {
-      if (!IpChecker(ipAddressStore.myIP)) {
-        return next({ path: "/" });
-      }
-    }
-  }
+  // if (isProtected) {
+  //   if (!ipAddressStore.myIP) {
+  //     await ipAddressStore.getMyIp();
+  //     if (!IpChecker(ipAddressStore.myIP)) {
+  //       return next({ path: "/" });
+  //     }
+  //   } else {
+  //     if (!IpChecker(ipAddressStore.myIP)) {
+  //       return next({ path: "/" });
+  //     }
+  //   }
+  // }
 
-  if (!userStore.user) {
-    await userStore.fetchCurrentUser();
-  }
+  // if (!userStore.user) {
+  //   await userStore.fetchCurrentUser();
+  // }
 
-  if (requiresAuth && !userStore.user) {
-    return next({ name: "Login" });
-  }
+  // if (requiresAuth && !userStore.user) {
+  //   return next({ name: "Login" });
+  // }
 
-  if (
-    requiresAdminAuth &&
-    (!userStore.user || !AdminChecker(userStore.user.uid))
-  ) {
-    userStore.logout();
-    return next({ path: "/" });
-  }
+  // if (
+  //   requiresAdminAuth &&
+  //   (!userStore.user || !AdminChecker(userStore.user.uid))
+  // ) {
+  //   userStore.logout();
+  //   return next({ path: "/" });
+  // }
 
-  if (to.name === "Login" && userStore.user) {
-    return next({ name: "Dashboard" });
-  }
+  // if (to.name === "Login" && userStore.user) {
+  //   return next({ name: "Dashboard" });
+  // }
 
   next();
 });
