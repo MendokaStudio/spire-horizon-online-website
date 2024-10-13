@@ -22,10 +22,6 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  opacity: {
-    type: Number,
-    required: true,
-  },
   isLock: {
     type: Boolean,
     required: true,
@@ -43,28 +39,28 @@ const imagePath = new URL(
 <template>
   <div class="relative">
     <div
-      class="relative hover:scale-100 hover:z-10 duration-300 ease-in-out border-2 border-amber-500 border-opacity-60 rounded-3xl bg-slate-800 w-full"
+      class="relative w-full duration-300 ease-in-out border-2 hover:scale-100 hover:z-10 border-amber-500 border-opacity-60 rounded-3xl bg-slate-800"
     >
-      <div class="w-full h-full relative">
+      <div class="relative w-full h-full">
         <!-- Black backdrop as a foreground -->
         <div
           :class="`absolute inset-0 bg-black rounded-3xl`"
           :style="{ opacity: computedOpacity }"
         ></div>
-        <div class="flex justify-start items-start">
+        <div class="flex items-start justify-start">
           <div class="w-full">
             <!-- Image -->
             <img
               :src="imagePath"
               alt="Class Image"
-              class="w-full rounded-tl-3xl rounded-tr-3xl mx-auto h-fit"
+              class="w-full mx-auto rounded-tl-3xl rounded-tr-3xl h-fit"
             />
           </div>
         </div>
-        <div class="p-2 text-center text-lg px-6 text-gray-300">
+        <div class="p-2 px-6 text-lg text-center text-gray-300">
           {{ props.description }}
         </div>
-        <div class="p-5 text-center text-lg px-6 text-yellow-400">
+        <div class="p-5 px-6 text-lg text-center text-yellow-400">
           {{ props.releaseDate }}
         </div>
       </div>

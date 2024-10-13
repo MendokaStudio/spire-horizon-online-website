@@ -59,22 +59,22 @@ const ToggleTrailer = () => {
 </script>
 
 <template>
-  <div class="w-screen h-screen relative">
-    <div class="h-full flex">
+  <div class="relative w-screen h-screen">
+    <div class="flex h-full">
       <!-- Video Trailer -->
       <div
         v-if="isShowTrailer"
         @click="ToggleTrailer()"
-        class="absolute w-full h-full z-20 bg-black bg-opacity-50"
+        class="absolute z-20 w-full h-full bg-black bg-opacity-50"
       >
-        <div class="h-full w-full flex justify-center items-center mx-auto">
+        <div class="flex items-center justify-center w-full h-full mx-auto">
           <div
             class="border-2 p-2 bg-gray-500 bg-opacity-30 border-gray-500 border-opacity-50 rounded-3xl shadow-2xl sm:mx-10 mx-5 2xl:w-[928px] 2xl:h-[530px] xl:w-[800px] xl:h-[460px] lg:w-[695px] lg:h-[400px] md:w-[570px] md:h-[330px] sm:w-[460px] sm:h-[270px] w-[370px] h-[215px]"
           >
             <iframe
-              class="w-full h-full rounded-3xl object-contain"
-              src="https://www.youtube.com/embed/b5Qm8XSE3oA"
-              title="Spire Horizon Online: Capybara Harmony"
+              class="object-contain w-full h-full rounded-3xl"
+              src="https://www.youtube.com/embed/POEOPQ56UKI"
+              title="Spire Horizon Online - Official Cinematic Trailer"
               frameborder="0"
               allow="accelerometer; autoplay;  encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
@@ -85,7 +85,7 @@ const ToggleTrailer = () => {
       </div>
       <!-- Middle Content -->
       <div
-        class="mx-auto h-fit space-y-10 my-auto pb-36 w-fit flex flex-col justify-between items-center"
+        class="flex flex-col items-center justify-between mx-auto my-auto space-y-10 h-fit pb-36 w-fit"
       >
         <!-- Play Icon -->
         <svg
@@ -95,7 +95,7 @@ const ToggleTrailer = () => {
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="size-20 opacity-30 hover:opacity-80 ease-in-out duration-500 transition-all hover:cursor-pointer"
+          class="transition-all duration-500 ease-in-out size-20 opacity-30 hover:opacity-80 hover:cursor-pointer"
         >
           <path
             stroke-linecap="round"
@@ -112,28 +112,28 @@ const ToggleTrailer = () => {
     </div>
 
     <!-- Footer -->
-    <div class="absolute bottom-0 left-0 w-full lg:mb-0 md:mb-40 mb-40">
+    <div class="absolute bottom-0 left-0 w-full mb-40 lg:mb-0 md:mb-40">
       <div
-        class="flex flex-col lg:flex-col xl:flex-row w-full justify-between items-end p-0 lg:p-10 space-y-2 lg:space-y-3 xl:space-y-0"
+        class="flex flex-col items-end justify-between w-full p-0 space-y-2 lg:flex-col xl:flex-row lg:p-10 lg:space-y-3 xl:space-y-0"
       >
-        <div class="lg:w-fit xl:w-fit mx-auto xl:mx-0 opacity-90">
+        <div class="mx-auto lg:w-fit xl:w-fit xl:mx-0 opacity-90">
           <div
-            class="flex justify-center items-center lg:space-x-5 2xl:space-x-8 xl:space-x-6 xl:ml-20"
+            class="flex items-center justify-center lg:space-x-5 2xl:space-x-8 xl:space-x-6 xl:ml-20"
           >
             <button class="relative" @click="CopyUrl()">
               <img
                 src="../../image/socials/share.png"
                 alt="X"
-                class="social-icon scale-90 opacity-90"
+                class="scale-90 social-icon opacity-90"
               />
               <div
                 id="copyUrl"
                 v-if="isCopying"
-                class="absolute -top-10 -left-5 w-96 h-96 duration-300 ease-in-out transition-opacity opacity-0 tooltip"
+                class="absolute transition-opacity duration-300 ease-in-out opacity-0 -top-10 -left-5 w-96 h-96 tooltip"
                 :style="{ opacity: copyOpacity / 100 }"
               >
                 <div
-                  class="bg-gray-900 bg-opacity-90 w-fit px-4 py-1 rounded-xl"
+                  class="px-4 py-1 bg-gray-900 bg-opacity-90 w-fit rounded-xl"
                 >
                   Copied
                 </div>
@@ -143,7 +143,7 @@ const ToggleTrailer = () => {
               <img
                 src="../../image/socials/twitter.png"
                 alt="X"
-                class="social-icon scale-90"
+                class="scale-90 social-icon"
               />
             </a>
             <a
@@ -153,7 +153,7 @@ const ToggleTrailer = () => {
               <img
                 src="../../image/socials/facebook.png"
                 alt="Facebook"
-                class="social-icon scale-90"
+                class="scale-90 social-icon"
             /></a>
             <a href="https://www.youtube.com/@mendokasan" target="_blank">
               <img
@@ -171,7 +171,7 @@ const ToggleTrailer = () => {
               <img
                 src="../../image/socials/reddit.png"
                 alt="Reddit"
-                class="social-icon scale-105 pb-2"
+                class="pb-2 scale-105 social-icon"
             /></a>
             <a href="https://www.instagram.com/mendokasan/" target="_blank"
               ><img
@@ -189,9 +189,9 @@ const ToggleTrailer = () => {
         </div>
         <!-- Stores -->
         <div
-          class="flex w-fit mx-auto xl:mx-0 2xl:mr-32 xl:mr-0 mb-10 bg-slate-300 bg-opacity-30 rounded-xl p-3"
+          class="flex flex-col p-3 mx-auto mb-10 space-y-3 w-fit xl:mx-0 2xl:mr-32 xl:mr-0 bg-slate-300 bg-opacity-30 rounded-xl"
         >
-          <div class="md:flex items-center justify-center hidden mr0 md:mr-3">
+          <!-- <div class="items-center justify-center hidden md:flex mr0 md:mr-3">
             <div class="w-fit">
               <img
                 src="../../image/socials/qrcode.png"
@@ -199,65 +199,18 @@ const ToggleTrailer = () => {
                 class="store-qr--button opacity-95"
               />
             </div>
-          </div>
-          <div class="flex flex-col justify-between space-y-3">
-            <div class="flex space-x-6">
-              <!-- App Store -->
-              <!-- <button
-                disabled
-                type="button"
-                @click="openUrl('')"
-                class="store-button disabled:opacity-30 opacity-95"
-              >
-                <img
-                  src="../../image/socials/appstore.png"
-                  alt=""
-                  class="w-full"
-                />
-              </button> -->
-
-              <!-- Google Play -->
-              <button
-                disabled
-                type="button"
-                @click="openUrl('')"
-                class="store-button disabled:opacity-30 opacity-95"
-              >
-                <img
-                  src="../../image/socials/googleplay.png"
-                  alt=""
-                  class="w-full"
-                />
-              </button>
-            </div>
-            <div class="flex space-x-6">
-              <!-- Steam -->
-              <button
-                type="button"
-                @click="
-                  openUrl(
-                    'https://store.steampowered.com/app/2598020/Spire_Horizon_Online/'
-                  )
-                "
-                class="store-button disabled:opacity-30 opacity-95"
-              >
-                <img
-                  src="../../image/socials/windows.png"
-                  alt=""
-                  class="w-full"
-                />
-              </button>
-              <!-- Epic Store -->
-              <!-- <button
-                disabled
-                type="button"
-                @click="openUrl('')"
-                class="store-button disabled:opacity-30 opacity-95"
-              >
-                <img src="../../image/socials/epic.png" alt="" class="w-full" />
-              </button> -->
-            </div>
-          </div>
+          </div> -->
+          <button
+            type="button"
+            @click="
+              openUrl(
+                'https://store.steampowered.com/app/2598020/Spire_Horizon_Online/'
+              )
+            "
+            class="store-button disabled:opacity-30 opacity-95"
+          >
+            <img src="../../image/socials/windows.png" alt="" class="w-full" />
+          </button>
         </div>
       </div>
     </div>

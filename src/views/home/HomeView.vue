@@ -20,22 +20,22 @@ onMounted(() => {
         isCompleteOpening.value = true;
       }
     }, 5);
-  }, 3000);
+  }, 1);
 });
 </script>
 
 <template>
   <div class="relative h-screen overflow-hidden">
     <!-- Opening Video -->
-    <video
+    <!-- <video
       v-if="!isCompleteOpening"
-      class="absolute top-0 left-0 w-full h-full object-cover z-50"
+      class="absolute top-0 left-0 z-50 object-cover w-full h-full"
       :style="{ opacity: videoOpacity / 100 }"
       autoplay
       muted
     >
       <source src="../../videos/Intro.mp4" type="video/mp4" />
-    </video>
+    </video> -->
     <!-- Background Video -->
     <video
       class="absolute top-0 left-0 w-full h-full object-cover object-[-280px] xl:object-center"

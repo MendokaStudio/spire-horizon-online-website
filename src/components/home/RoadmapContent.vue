@@ -18,10 +18,10 @@ onMounted(async () => {
       class="relative w-11/12 h-3/6 lg:w-11/12 lg:h-4/6 2xl:w-8/12 2xl:h-3/4 bg-[url('../image/elements/modal_empty_background.png')] bg-[length:100%_100%]"
     >
       <!-- Content -->
-      <div class="flex justify-center items-center w-full h-full">
+      <div class="flex items-center justify-center w-full h-full">
         <div class="w-full h-full px-1 sm:px-10 pt-[9px] pb-[3px]">
           <div
-            class="no-scrollbar grid lg:grid-cols-3 md:grid-cols-1 gap-4 h-full overflow-auto"
+            class="grid h-full gap-4 overflow-auto no-scrollbar lg:grid-cols-3 md:grid-cols-1"
           >
             <RoadmapCard
               classImage="Fighter_Profile"

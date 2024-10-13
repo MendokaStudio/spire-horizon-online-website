@@ -54,15 +54,15 @@ const toggleAudio = () => {
 
 <template>
   <!-- Mobile Navbar -->
-  <nav class="fixed lg:hidden w-full z-20 bottom-0 mb-16 md:mb-16">
-    <div class="w-full flex justify-center items-center">
+  <nav class="fixed bottom-0 z-20 w-full mb-16 lg:hidden md:mb-16">
+    <div class="flex items-center justify-center w-full">
       <!-- Image -->
       <div class="absolute z-0 px-5 max-w-[500px]">
         <img src="../../image/elements/navbar_background.png" alt="" class="" />
       </div>
 
       <!-- Nav Links -->
-      <div class="items-center flex justify-center w-full static z-10">
+      <div class="static z-10 flex items-center justify-center w-full">
         <div class="mobile-navbar-vertical-left"></div>
         <div
           @click="utilityStore.SmoothChangeContent(router, 'Home')"
@@ -76,15 +76,13 @@ const toggleAudio = () => {
         </div>
         <div class="mobile-navbar-vertical-right"></div>
         <div class="mobile-navbar-vertical-left"></div>
-        <div
-          @click="utilityStore.SmoothChangeContent(router, 'Roadmap')"
-          class="mobile-navbar-button"
-        >
-          <img
-            src="../../image/icons/T_Coins.png"
-            alt=""
-            class="w-10 h-10 opacity-80"
-          />
+        <div class="mobile-navbar-button">
+          <a href="https://ko-fi.com/mendoka/tiers" target="_blank"
+            ><img
+              src="../../image/icons/T_Coins.png"
+              alt=""
+              class="w-10 h-10 opacity-80"
+          /></a>
         </div>
         <div class="mobile-navbar-vertical-right"></div>
         <div class="mobile-navbar-vertical-left"></div>
@@ -113,7 +111,7 @@ const toggleAudio = () => {
         <div class="mobile-navbar-vertical-right"></div>
         <div class="mobile-navbar-vertical-left"></div>
         <div
-          @click="utilityStore.SmoothChangeContent(router, 'Ranking')"
+          @click="utilityStore.SmoothChangeContent(router, 'Roadmap')"
           class="mobile-navbar-button"
         >
           <img
@@ -127,9 +125,9 @@ const toggleAudio = () => {
   </nav>
 
   <!-- PC Navbar -->
-  <nav class="fixed w-full z-20 top-0 start-0">
+  <nav class="fixed top-0 z-20 w-full start-0">
     <!-- Navbar -->
-    <div class="w-full flex flex-col lg:flex-row justify-between items-center">
+    <div class="flex flex-col items-center justify-between w-full lg:flex-row">
       <!-- Empty Div -->
       <div
         :class="
@@ -139,7 +137,7 @@ const toggleAudio = () => {
         "
       >
         <div
-          class="hover:cursor-pointer w-20 ml-20 ring rounded-3xl p-1 ring-slate-100 ring-opacity-30 shadow-2xl"
+          class="w-20 p-1 ml-20 shadow-2xl hover:cursor-pointer ring rounded-3xl ring-slate-100 ring-opacity-30"
           @click="toggleAudio()"
         >
           <img
@@ -156,16 +154,16 @@ const toggleAudio = () => {
       </div>
 
       <!-- Nav Links -->
-      <div class="w-full hidden lg:flex justify-center items-center m-20">
+      <div class="items-center justify-center hidden w-full m-20 lg:flex">
         <!-- Navlink Background Image -->
         <div class="absolute z-0 w-fit lg:w-6/12 max-w-[800px]">
           <img
             src="../../image/elements/navbar_background.png"
             alt=""
-            class="h-24 w-full"
+            class="w-full h-24"
           />
         </div>
-        <div class="items-center flex justify-center w-full static z-10">
+        <div class="static z-10 flex items-center justify-center w-full">
           <div class="navbar-vertical-left"></div>
           <div
             @click="utilityStore.SmoothChangeContent(router, 'Home')"
@@ -175,11 +173,8 @@ const toggleAudio = () => {
           </div>
           <div class="navbar-vertical-right"></div>
           <div class="navbar-vertical-left"></div>
-          <div
-            @click="utilityStore.SmoothChangeContent(router, 'Roadmap')"
-            class="navbar-button"
-          >
-            Roadmap
+          <div class="navbar-button">
+            <a href="https://ko-fi.com/mendoka/tiers" target="_blank">Shop</a>
           </div>
           <div class="navbar-vertical-right"></div>
           <div class="navbar-vertical-left"></div>
@@ -200,17 +195,17 @@ const toggleAudio = () => {
           <div class="navbar-vertical-right"></div>
           <div class="navbar-vertical-left"></div>
           <div
-            @click="utilityStore.SmoothChangeContent(router, 'Ranking')"
+            @click="utilityStore.SmoothChangeContent(router, 'Roadmap')"
             class="navbar-button"
           >
-            Ranking
+            Roadmap
           </div>
         </div>
       </div>
 
       <!-- Images -->
       <div
-        class="static w-8/12 sm:w-9/12 md:w-6/12 lg:w-5/12 xl:w-4/12 mt-3 md:mt-10 flex justify-center"
+        class="static flex justify-center w-8/12 mt-3 sm:w-9/12 md:w-6/12 lg:w-5/12 xl:w-4/12 md:mt-10"
       >
         <div class="absolute top-5 left-5">
           <div
@@ -221,7 +216,7 @@ const toggleAudio = () => {
             "
           >
             <div
-              class="hover:cursor-pointer w-12 ring rounded-3xl p-1 ring-slate-100 ring-opacity-30 shadow-2xl"
+              class="w-12 p-1 shadow-2xl hover:cursor-pointer ring rounded-3xl ring-slate-100 ring-opacity-30"
               @click="toggleAudio()"
             >
               <img

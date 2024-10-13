@@ -19,7 +19,7 @@
 }
 
 .store-button {
-  @apply 2xl:w-60 xl:w-48 md:w-48 w-36;
+  @apply 2xl:w-48 xl:w-48 md:w-48 w-36;
 }
 
 .store-qr--button {

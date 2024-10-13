@@ -24,7 +24,6 @@ export const useUtilityStore = defineStore("utilityStore", {
             this.ContentReveal();
             router.push({ name: pathName });
             if (pathName == "Home") {
-              console.log("set show");
               this.isShowCopyright = true;
             } else {
               this.isShowCopyright = false;
