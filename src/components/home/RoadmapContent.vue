@@ -24,38 +24,45 @@ onMounted(async () => {
             class="grid h-full gap-4 overflow-auto no-scrollbar lg:grid-cols-3 md:grid-cols-1"
           >
             <RoadmapCard
-              classImage="Fighter_Profile"
-              description="A versatile melee combatant, excelling in close-quarters combat with a mix of strength and agility."
+              classImage="HighresScreenshot00007"
+              description="The game officially launches, inviting players to begin their epic journey in the world of adventure."
               class="scale-90"
-              releaseDate="1 November 2024"
+              releaseDate="6 December 2024"
               :isLock="false"
             />
             <RoadmapCard
-              classImage="Fighter_Profile"
-              description="A versatile melee combatant, excelling in close-quarters combat with a mix of strength and agility."
+              classImage="HighresScreenshot00056"
+              description="The Forest zone in the Mainland unlocks, introducing a new storyline."
               class="scale-90"
-              releaseDate="1 November 2024"
+              releaseDate="20 December 2024"
               :isLock="true"
             />
             <RoadmapCard
-              classImage="Fighter_Profile"
-              description="A versatile melee combatant, excelling in close-quarters combat with a mix of strength and agility."
+              classImage="HighresScreenshot00070"
+              description="The first part of the Desert zone in the Mainland unlocks, accompanied by a new storyline."
               class="scale-90"
-              releaseDate="1 November 2024"
+              releaseDate="10 January 2025"
               :isLock="true"
             />
             <RoadmapCard
-              classImage="Fighter_Profile"
-              description="A versatile melee combatant, excelling in close-quarters combat with a mix of strength and agility."
+              classImage="HighresScreenshot00069"
+              description="The second part of the Desert zone in the Mainland unlocks, advancing the storyline."
               class="scale-90"
-              releaseDate="1 November 2024"
+              releaseDate="31 January 2025"
               :isLock="true"
             />
             <RoadmapCard
-              classImage="Fighter_Profile"
-              description="A versatile melee combatant, excelling in close-quarters combat with a mix of strength and agility."
+              classImage="HighresScreenshot00000"
+              description="The first part of the Snow zone in the Mainland unlocks, bringing a new chapter to the story."
               class="scale-90"
-              releaseDate="1 November 2024"
+              releaseDate="21 February 2025"
+              :isLock="true"
+            />
+            <RoadmapCard
+              classImage="HighresScreenshot00079"
+              description="The second part of the Snow zone in the Mainland unlocks, concluding the final storyline."
+              class="scale-90"
+              releaseDate="14 March 2025"
               :isLock="true"
             />
           </div>

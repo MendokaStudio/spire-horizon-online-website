@@ -31,7 +31,7 @@ const props = defineProps({
 const computedOpacity = computed(() => (props.isLock ? 50 / 100 : 0 / 100));
 
 const imagePath = new URL(
-  `../../image/classes/${props.classImage}.png`,
+  `../../image/roadmap/${props.classImage}.png`,
   import.meta.url
 ).href;
 </script>
@@ -57,10 +57,10 @@ const imagePath = new URL(
             />
           </div>
         </div>
-        <div class="p-2 px-6 text-lg text-center text-gray-300">
+        <div class="px-6 pt-3 pb-2 text-lg text-center text-gray-300">
           {{ props.description }}
         </div>
-        <div class="p-5 px-6 text-lg text-center text-yellow-400">
+        <div class="pb-3 text-lg text-center text-yellow-400">
           {{ props.releaseDate }}
         </div>
       </div>
