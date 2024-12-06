@@ -35,35 +35,35 @@ onMounted(async () => {
               description="The Forest zone in the Mainland unlocks, introducing a new storyline."
               class="scale-90"
               releaseDate="20 December 2024"
-              :isLock="true"
-            />
-            <RoadmapCard
-              classImage="HighresScreenshot00070"
-              description="The first part of the Desert zone in the Mainland unlocks, accompanied by a new storyline."
-              class="scale-90"
-              releaseDate="10 January 2025"
-              :isLock="true"
+              :isLock="false"
             />
             <RoadmapCard
               classImage="HighresScreenshot00069"
-              description="The second part of the Desert zone in the Mainland unlocks, advancing the storyline."
+              description="The Desert zone in the Mainland unlocks, accompanied by a new storyline."
               class="scale-90"
-              releaseDate="31 January 2025"
-              :isLock="true"
-            />
-            <RoadmapCard
-              classImage="HighresScreenshot00000"
-              description="The first part of the Snow zone in the Mainland unlocks, bringing a new chapter to the story."
-              class="scale-90"
-              releaseDate="21 February 2025"
-              :isLock="true"
+              releaseDate="10 January 2025"
+              :isLock="false"
             />
             <RoadmapCard
               classImage="HighresScreenshot00079"
-              description="The second part of the Snow zone in the Mainland unlocks, concluding the final storyline."
+              description="The Snow zone in the Mainland unlocks, accompanied by a new storyline."
+              class="scale-90"
+              releaseDate="31 January 2025"
+              :isLock="false"
+            />
+            <RoadmapCard
+              classImage="HighresScreenshot00060"
+              description="The Heaven zone in the Mainland unlocks, concluding the final storyline."
+              class="scale-90"
+              releaseDate="21 February 2025"
+              :isLock="false"
+            />
+            <RoadmapCard
+              classImage="HighresScreenshot00059"
+              description="The grand finale arrives with the full release, completing your epic journey!"
               class="scale-90"
               releaseDate="14 March 2025"
-              :isLock="true"
+              :isLock="false"
             />
           </div>
         </div>
